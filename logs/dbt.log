@@ -1,0 +1,48 @@
+[0m22:46:05.442358 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F69A9EF220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F69D1F38B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F69D1F36A0>]}
+
+
+============================== 22:46:05.450331 | 6049e8ed-7ac0-44d9-9b65-c155f331d2d6 ==============================
+[0m22:46:05.450331 [info ] [MainThread]: Running with dbt=1.12.5
+[0m22:46:05.451277 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\pc\\.dbt', 'invocation_command': 'dbt init dbt_project', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'logs'}
+[0m22:46:05.534955 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\pc\.dbt
+[0m22:46:05.550355 [debug] [MainThread]: Starter project path: C:\Users\pc\anaconda3\envs\smartcredit_env\lib\site-packages\dbt\include\starter_project
+[0m22:46:05.885372 [info ] [MainThread]: Setting up your profile.
+[0m22:51:40.695426 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+
+[0m22:51:40.715330 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\pc\anaconda3\envs\smartcredit_env\lib\site-packages\dbt\cli\requires.py", line 198, in wrapper
+    result, success = func(*args, **kwargs)
+  File "C:\Users\pc\anaconda3\envs\smartcredit_env\lib\site-packages\dbt\cli\requires.py", line 144, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\pc\anaconda3\envs\smartcredit_env\lib\site-packages\dbt\cli\main.py", line 504, in init
+    results = task.run()
+  File "C:\Users\pc\anaconda3\envs\smartcredit_env\lib\site-packages\dbt\task\init.py", line 363, in run
+    self.setup_profile(profile_name)
+  File "C:\Users\pc\anaconda3\envs\smartcredit_env\lib\site-packages\dbt\task\init.py", line 264, in setup_profile
+    adapter = self.ask_for_adapter_choice()
+  File "C:\Users\pc\anaconda3\envs\smartcredit_env\lib\site-packages\dbt\task\init.py", line 245, in ask_for_adapter_choice
+    numeric_choice = click.prompt(prompt_msg, type=click.INT)
+  File "C:\Users\pc\anaconda3\envs\smartcredit_env\lib\site-packages\click\termui.py", line 262, in prompt
+    value = prompt_func(prompt)
+  File "C:\Users\pc\anaconda3\envs\smartcredit_env\lib\site-packages\click\termui.py", line 245, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m22:51:40.718326 [debug] [MainThread]: Command `dbt init` failed at 22:51:40.718326 after 335.45 seconds
+[0m22:51:40.720836 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F69A9EF220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F69D1F3E80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F69D1B94E0>]}
+[0m22:51:40.721837 [debug] [MainThread]: Flushing usage events
+[0m22:51:50.623231 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BFE7A4F2E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BFEA1F25F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BFEA1F1060>]}
+
+
+============================== 22:51:50.630169 | 7c0cee6f-58f4-4871-aa79-b45809ac93b5 ==============================
+[0m22:51:50.630169 [info ] [MainThread]: Running with dbt=1.12.5
+[0m22:51:50.631183 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\pc\\.dbt', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt run', 'log_path': 'logs'}
+[0m22:51:50.632184 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\pc\Documents\smartcredit-cloud\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:51:50.635178 [debug] [MainThread]: Command `dbt run` failed at 22:51:50.634193 after 0.20 seconds
+[0m22:51:50.635178 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BFE7A4F2E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BFEA1F0BB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BFEA1F1300>]}
+[0m22:51:50.636177 [debug] [MainThread]: Flushing usage events
+[0m22:51:51.120051 [debug] [MainThread]: An error was encountered while trying to flush usage events

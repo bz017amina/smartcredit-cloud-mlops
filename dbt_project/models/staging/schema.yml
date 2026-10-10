@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: raw_credit_data
+    database: smartcredit_pipeline
+    schema: raw_credit_data
+    tables:
+      - name: credit_applications
+
+models:
+  - name: stg_credit_applications
+    description: "Données de crédit nettoyées et prêtes pour le Machine Learning"
+    columns:
+      - name: age
+        tests:
+          - not_null
+      - name: default_status
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]

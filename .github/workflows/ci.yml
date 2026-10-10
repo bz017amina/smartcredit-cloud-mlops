@@ -1,0 +1,37 @@
+name: SmartCredit MLOps CI
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Récupérer le code source
+      uses: actions/checkout@v3
+
+    - name: Configurer Python 3.10
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+
+    - name: Installer les dépendances
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Tester le démarrage de l'API et valider le modèle
+      run: |
+        # Lancer l'API en arrière-plan pour le test
+        uvicorn app:app --host 127.0.0.1 --port 8000 &
+        sleep 3
+        
+        # Tester la route d'accueil
+        curl --fail http://127.0.0.1:8000/
+        
+        # Arrêter le processus proprement
+        kill %1
